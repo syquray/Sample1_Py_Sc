@@ -8,9 +8,8 @@ headers = {
 "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36"
 }
 
-def getUnreadMessagesCount(user):
+def get_unread_msg_cnt(user):
     headers["referer"] = "https://scratch.mit.edu"
-    msgcnt = requests.get("https://api.scratch.mit.edu/users/" + str(user) + "/messages/count", headers=headers).json()['count']
-    return msgcnt
+    return requests.get("https://api.scratch.mit.edu/users/" + str(user) + "/messages/count", headers=headers).json()['count']
 
-print(getUnreadMessagesCount(user = input("Enter the name of the user for whom you want to retrieve the number of unread messages: ")))
+print(get_unread_msg_cnt(input("Username: ")))
