@@ -11,6 +11,7 @@ headers = {
 
 def get_unread_msg_cnt(user):
     headers["referer"] = "https://scratch.mit.edu"
+    
     return requests.get("https://api.scratch.mit.edu/users/" + str(user) + "/messages/count", headers=headers).json()['count']
 
 
