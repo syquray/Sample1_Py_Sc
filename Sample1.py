@@ -14,4 +14,4 @@ def get_unread_msg_cnt(user):
     return requests.get("https://api.scratch.mit.edu/users/" + str(user) + "/messages/count", headers=headers).json()['count']
 
 
-print(get_unread_msg_cnt(input("Username: ")))
+print(get_unread_msg_cnt(input("username: ")))
